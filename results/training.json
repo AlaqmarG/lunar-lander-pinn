@@ -1,0 +1,102 @@
+{
+  "formulation": "strong-form ODE PINN; hard initial state; soft terminal landing goal",
+  "loss_groups": {
+    "physics": [
+      "x_motion",
+      "y_motion",
+      "x_acceleration",
+      "y_acceleration",
+      "angle_motion",
+      "angular_acceleration"
+    ],
+    "goal": [
+      "landing_goal"
+    ],
+    "constraints": [
+      "terrain_clearance",
+      "speed_limit"
+    ],
+    "objective": [
+      "fuel_effort"
+    ]
+  },
+  "goal_normalization_scales": {
+    "x": 40,
+    "y": 40,
+    "vx": 20,
+    "vy": 20,
+    "theta": 0.3,
+    "omega": 1
+  },
+  "predicted_initial_error": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.0,
+    0.0
+  ],
+  "predicted_terminal_state": [
+    253.33340861098876,
+    480.71260431298305,
+    -3.66770601387123e-05,
+    7.999961689528632,
+    -5.556820060412249e-07,
+    -2.3210653166197415e-06
+  ],
+  "predicted_terminal_error": [
+    7.527765541226472e-05,
+    -1.9798695404915634e-05,
+    -3.66770601387123e-05,
+    -3.831047136770849e-05,
+    -5.556820060412249e-07,
+    -2.3210653166197415e-06
+  ],
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 3070",
+  "torch": "2.11.0+cu128",
+  "dtype": "torch.float64",
+  "seed": 0,
+  "training_seconds": 450.70152240000607,
+  "adam_steps": 4000,
+  "lbfgs_closure_evaluations": 2106,
+  "cuda_peak_allocated_mb": 47.44580078125,
+  "loss_weights": {
+    "x_motion": 100.0,
+    "y_motion": 100.0,
+    "x_acceleration": 100.0,
+    "y_acceleration": 100.0,
+    "angle_motion": 100.0,
+    "angular_acceleration": 100.0,
+    "landing_goal": 1000.0,
+    "terrain_clearance": 100.0,
+    "speed_limit": 100.0,
+    "fuel_effort": 1e-05
+  },
+  "final_unweighted_losses": {
+    "x_motion": 2.3865929545183724e-08,
+    "y_motion": 4.113239057763505e-08,
+    "x_acceleration": 6.499200269302487e-08,
+    "y_acceleration": 4.7908199876688294e-08,
+    "angle_motion": 1.7468486020217414e-07,
+    "angular_acceleration": 2.40445453161075e-08,
+    "landing_goal": 3.2728673769343773e-12,
+    "terrain_clearance": 0.0,
+    "speed_limit": 0.0,
+    "fuel_effort": 0.11527875041480345
+  },
+  "dense_normalized_residual_rmse": {
+    "x_motion": 0.0001514260399246339,
+    "y_motion": 0.00019449655789053257,
+    "x_acceleration": 0.00024967808988279064,
+    "y_acceleration": 0.00020937964739992237,
+    "angle_motion": 0.0004144304637801535,
+    "angular_acceleration": 0.00015476711304359824
+  },
+  "game_validation": {
+    "original_engine_landed": true,
+    "physics_frames": 719,
+    "adapter_agrees_with_engine": true,
+    "real_browser_automated": false
+  }
+}

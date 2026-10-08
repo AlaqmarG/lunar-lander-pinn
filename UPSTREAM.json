@@ -1,0 +1,62 @@
+{
+  "repository": "cscazorla/javascript-videogame-lunar-lander",
+  "ref": "master",
+  "files": {
+    "index.html": {
+      "git_blob_sha1": "fb31e20612387fbdb09dc92acb6b781e40e628ab",
+      "verified": true
+    },
+    "LICENSE": {
+      "git_blob_sha1": "02ad8e19fd7628b12a5dc43e7235c4eefb1c8740",
+      "verified": true
+    },
+    "README.md": {
+      "git_blob_sha1": "84640edaf4f127bf64835ae4bb1805a867d8d577",
+      "verified": true
+    },
+    "css/style.css": {
+      "git_blob_sha1": "c7a5b20f5781f2b7c0cbc915572f430a3c8f67c4",
+      "verified": true
+    },
+    "js/main.js": {
+      "git_blob_sha1": "f062ed4e99380f00fac65f6ca514e5a758ef9b89",
+      "verified": true
+    },
+    "js/game.js": {
+      "git_blob_sha1": "4424ee334e6e55fcd0a790063c982f317dd4c1e0",
+      "verified": true
+    },
+    "js/dom.js": {
+      "git_blob_sha1": "05a517a9633bbf3e4571e2591d490d5c5bc4d4d9",
+      "verified": true
+    },
+    "js/config.js": {
+      "git_blob_sha1": "6dfd95edc90888421a941676b1e515572f040648",
+      "verified": true
+    },
+    "js/lander.js": {
+      "git_blob_sha1": "0c55eaddd975d53cc8eb9fabf23f13a0ea4d584e",
+      "verified": true
+    },
+    "js/map.js": {
+      "git_blob_sha1": "f863267d29088ecbfdcb83da0316c7bb0daf17b8",
+      "verified": true
+    },
+    "js/starfield.js": {
+      "git_blob_sha1": "ce5a359fdfc748fc65fc98c638ae4b2e25483976",
+      "verified": true
+    },
+    "js/stats.module.js": {
+      "git_blob_sha1": "8a3edfd40ae71d144dc0e879b2649133e9472856",
+      "verified": true
+    },
+    "js/collisions.js": {
+      "git_blob_sha1": "db8555af35b0c9d32724cf4792dd2716eeb31f80",
+      "verified": true
+    },
+    "js/particle_explosion.js": {
+      "git_blob_sha1": "7810b9e85864cad246a6f0026a571d11669fd175",
+      "verified": true
+    }
+  }
+}

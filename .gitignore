@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+node_modules/
+.uv-cache/
+.env
+.env.*
+*.pt
+results/loss.csv
+results/adam*.json
+results/render-calls.json
+results/browser-*
+results/*.gif
+results/game-*.png

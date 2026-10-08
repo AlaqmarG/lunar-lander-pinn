@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lunar Lander PINN</title>
+  <link rel="stylesheet" href="third_party/lunar_lander/css/style.css">
+  <style>
+    html, body { height: auto; min-height: 100%; overflow: auto; background: white; color: #222; font: 16px/1.5 Arial, sans-serif; }
+    main { max-width: 800px; margin: 24px auto; padding: 0 16px 24px; }
+    h1 { font-size: 26px; }
+    button, select { font: inherit; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .readout { display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 0; }
+    .key { padding: 0 4px; }
+    .key.on { background: #fca311; color: black; }
+    .stage { position: relative; background: black; }
+    #canvas { display: block; width: 100%; height: auto; }
+    #UI { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; height: auto; min-height: 50px; gap: 8px; padding: 0 8px; font-size: 12px; }
+    #UI div { float: none; width: auto; padding: 0; }
+    #gameover { box-sizing: border-box; width: min(400px, 90%); height: auto; top: 160px; bottom: auto; padding: 24px; }
+    details { margin-top: 20px; }
+    summary { cursor: pointer; }
+    details img { display: block; width: 100%; margin: 16px 0; }
+    .loss { overflow-x: auto; }
+    .note { font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Lunar Lander PINN</h1>
+  <p>A small experiment using a physics-informed neural network to plan a landing on one fixed map.</p>
+  <div class="controls">
+    <button id="trained" disabled>Trained</button>
+    <button id="untrained" disabled>Untrained</button>
+    <button id="human" disabled>Play</button>
+    <button id="restart" disabled>Restart</button>
+    <button id="pause" disabled>Pause</button>
+    <label>Speed <select id="speed"><option value="1">1×</option><option value="2" selected>2×</option><option value="4">4×</option></select></label>
+  </div>
+  <div class="readout">
+    <span id="status" aria-live="polite">Loading…</span>
+    <span id="clock">0.00 s</span>
+    <span>Keys: <span class="key" id="left-key">←</span> <span class="key" id="up-key">↑</span> <span class="key" id="right-key">→</span></span>
+  </div>
+  <div class="stage">
+    <div id="UI"><div id="level">EASY</div><div id="fuel">Fuel</div><div id="angle">Angle</div><div id="velocity">Velocity</div></div>
+    <div id="welcome" hidden></div>
+    <div id="gameover"></div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+  </div>
+  <p class="note" id="mode-note">The network supplies thrust and turn controls. The game handles movement and landing checks.</p>
+  <details>
+    <summary>Training details</summary>
+    <p id="training-badge">Loading training information…</p>
+    <p id="training-summary"></p>
+    <p>The starting state is fixed in the network output. Physics and landing-goal penalties are separate: physics measures errors in the motion equations, while the goal measures final position, velocity, angle and angular velocity. Clearance, speed and thrust penalties also contribute.</p>
+    <p class="loss"><code>L = 100 L_physics + 1000 L_goal + 100 L_clearance + 100 L_speed + 0.00001 L_thrust</code></p>
+    <img src="results/loss.png" alt="Separate loss terms during training" loading="lazy">
+    <img src="results/flight.png" alt="Predicted trajectory compared with the game replay" loading="lazy">
+    <p class="note">This is an offline plan for one map. It does not adapt to new terrain or disturbances.</p>
+  </details>
+  <p class="note">Game by cscazorla, used under the MIT license. <a href="third_party/lunar_lander/index.html">Open the original game</a>.</p>
+</main>
+<script type="module" src="watch.js"></script>
+</body>
+</html>

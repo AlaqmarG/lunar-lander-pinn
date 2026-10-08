@@ -1,0 +1,44 @@
+{
+  "validation": "Node DOM/Canvas harness; not a launched browser",
+  "trained": {
+    "mode": "trained",
+    "frame": 719,
+    "paused": false,
+    "gameover": true,
+    "landed": true,
+    "crashed": false,
+    "x": 251.70309646556288,
+    "y": 480.7426358268682,
+    "speed": 7.990554357480007,
+    "fuel": 1767
+  },
+  "restart": {
+    "mode": "trained",
+    "frame": 719,
+    "paused": true,
+    "gameover": true,
+    "landed": true,
+    "crashed": false,
+    "x": 251.70309646556288,
+    "y": 480.7426358268682,
+    "speed": 7.990554357480007,
+    "fuel": 1767
+  },
+  "untrained": {
+    "mode": "untrained",
+    "frame": 379,
+    "paused": true,
+    "gameover": true,
+    "landed": false,
+    "crashed": true,
+    "x": 200,
+    "y": -0.9388888888887371,
+    "speed": 60,
+    "fuel": 1810
+  },
+  "human_key_applied": true,
+  "pause_checked": true,
+  "one_game_loop": true,
+  "agrees_with_original_engine_replay": true,
+  "canvas_captures": 121
+}
